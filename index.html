@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+    <script src="https://kit.fontawesome.com/cdeba73881.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="head"><img src="logo.jpg" id="logo">
+        <ul class="uul">
+            <li class="opt"><a href="#detail">Home</a></li>
+            <li class="opt"><a href="#about">ABout</a></li>
+            <li class="opt"><a href="#project">projects</a></li>
+            <li class="opt"><a href="#contact">Contact</a></li>
+        </ul></nav>
+    </header>
+    <div class="details" id="detail">
+        <h1 id="name">I'm Rokkam <span>Anusha</span></h1>
+        <p>This is my Official portfolio website to show all Details and Knowledge.<br>Passionate and driven fresher with a thirst for learning and a dedicatipn to Excellence</p>
+        <button id="button"><a href="resume9.pdf" download>DOWNLOAD CV</a></button>
+    </div>
+    <div class="aboutdiv">
+    <div id="about"><div class="bout col-1"><h2>About Me</h2>
+    </div>
+    <div class="pass">
+    <p id="para">Passionate software Engineer looking for opportunities to Grow and learn in the industry.<br>Skilled in programming languages such as Python, Java, and C with a strong Foundation in Computers.<br>Eager to contribute to a team and gain hands-on experience in software development</p>
+    <div class="tabs">
+        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+        <p class="tab-links" onclick="opentab('education')">Education</p>
+        <p class="tab-links" onclick="opentab('certificate')">Certificate</p>
+    </div>
+    <div class="tab-contents active-tabs" id="skills">
+        <ul class="tab-ul">
+            <li><span>Web Development</span><br>HTML,CSS,JS,React</li>
+            <li><span>programming languages</span><br>Python ,Java ,C, C++</li>
+            <li><span>Database</span><br>SQL,Power Bi</li>
+        </ul>
+    </div>
+    <div class="tab-contents" id="education">
+        <ul class="tab-ul">
+            <li><span>2023</span><br>B.Tech (ECE) in SITAM College<br>Vizianagaram</li>
+            <li><span>2019</span><br>Intermediate in Sri Aditya Junior College<br>Srikakulam</li>
+            <li><span>2017</span><br>SSC in Vikas High School<br>Srikakulam</li>
+        </ul>
+    </div>
+    <div class="tab-contents" id="certificate">
+        <ul class="tab-ul">
+            <li><span>Coursera</span><br>Python for Beginners</li>
+            <li><span>CISCO Networking Academy</span><br>JavaScript</li>
+            <li><span>SOLO Learner</span><br>MySQL </li>
+            <li><span>APSSDC</span><br>Eduskills Web Development training</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+<!-----project---->
+<div class="projects" id="project">
+    <div class="container"><h1 class="name">My Project</h1>
+        <div class="service-list">
+            <div class="list">
+                <h3>Calci</h3>
+                <p>Simple Calculator.<br>Using HTML,CSS,JS</p>
+            </div>
+            <div class="list">
+                <h3>Voice controlled Robotic car</h3>
+                <p>This project mainly used Arduino UNO and Give voice commands through the phone.<br>the car will move according to the commands</p>
+            </div>
+            <div class="list">
+                <h3>HR Analystic using Power Bi</h3>
+                <p>Power Bi project </p>
+            </div>
+        </div>
+</div>
+</div>
+<!-------contact------->
+<div class="contacts" id="contact">
+    <div class="con">
+        <h1 class="name">Contact Me</h1>
+        <p><i class="fa-regular fa-envelope"></i> rokkam.anusha.9@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 8341912849</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/shammu152/"><i class="fa-brands fa-instagram"></i>Instagram</a><br><br>
+                    <a href="https://www.linkedin.com/in/anusharokkam/"><i class="fa-brands fa-linkedin"></i>linkedin</a>
+                </div>
+    </div>
+    <div class="contact-right">
+        <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+        </form>
+        <span id="msg"></span>
+    </div>
+</div>
+
+<script>
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tabs");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tabs");
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyfe9pY_8rObeLiDgQviM-xXVWgrrAe3-zR_l6GqkXKvzSU-R1RCug3-YajSxPHktiaJw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent succussesfuly"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },2000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+</div>
+</body>
+
+</html>

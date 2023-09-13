@@ -1,0 +1,173 @@
+*{
+    
+    padding: 0;
+    line-height: 22px;
+}
+
+body{
+    width:100%;
+    height: 100%;
+    background-color: #212121;
+    color: aliceblue;
+}
+nav{
+    display: flex;
+    width: 86%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    color: aliceblue;
+    padding: 20px 50px 0;
+}
+#logo{
+    height: 60px;
+}
+p{
+    font-size: medium;
+}
+.uul{
+    display: flex;
+    list-style: none;
+    text-align: right;
+}
+.opt{
+    display: flex;
+    text-align: center;
+    padding-right: 30px;
+}
+a{
+    text-decoration: none;
+    color: cornsilk;
+    cursor: pointer;
+}
+a:hover{
+    color: red;
+}
+/*---- name and details--------*/
+span{
+    color: orange;
+}
+.details{
+    padding: 10%;
+}
+#button{
+    margin-left: 3%;
+    background-color: darkorange;
+    color:floralwhite;
+    padding: 1%;
+    border-radius: 7.5px;
+    font-weight:700;
+    border: 1px solid black;
+}
+#para{
+    font-size: 128%;
+}
+#about{
+    
+    padding: 10%;
+}
+.aboutdiv{
+    display: block;
+}
+.bout{
+   
+    display: inline-flex;
+    height: 5rem;
+    align-items: center;
+    color: darkorange;
+    font-size: 128%;
+}
+.pass{
+    display: contents;
+    position: absolute;
+}
+/*-----skill title tabs----*/
+.tabs{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor:pointer;
+    position: relative;
+    color: bisque; 
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    transition: 0.5s;
+    left: 0;
+    bottom: -8px;
+    background: rgb(247,170,28);
+}
+.tab-links.active-link::after{
+    width:50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-ul{
+    list-style: none;
+}
+li{
+    padding: 4px 0;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tabs{
+    display: block;
+}
+/*-------project -----*/
+.projects {
+    margin: 0% 1% 0% 10%;
+}
+.name{
+    font-size: 150%;
+    color: darkorange;
+}
+/*----project boxes----*/
+.service-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    line-height: 22px;
+}
+.list{
+    background: #3e3d3d;
+    border-radius: 7.5px;
+    padding: 11%;
+    transition: background 0.5s, transform 0.5s;
+}
+.list:hover{
+    background-color:  darkorange;
+    transform: translateY(-10px);
+}
+.contacts{
+display: flex;
+margin: 3% 1% 0% 10%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #3e3d3d;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+.btn.btn2{
+    background-color: darkorange;
+    color: #fff;
+    cursor: pointer;
+    padding: 1%;
+    border-radius: 7.5px;
+}
